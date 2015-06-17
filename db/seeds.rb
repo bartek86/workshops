@@ -20,4 +20,5 @@ User.create(
     password: 'admin123',
     firstname: 'The',
     lastname: 'Admin',
-    admin: true)   
+    admin: true)
+    
