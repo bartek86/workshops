@@ -1,0 +1,17 @@
+<%= user.person %>
+<% if user.reviews.any? %>
+    <h3>Reviews</h3>
+    
+        <% @reviews.each do |r| %>
+            <ol class = "reviews">
+                <p><%= link_to r.product.title, category_product_path(r.product.category.id, r.product.id) %></p>
+                <p><%= r.content %></p>
+                <p>Product rated: <%= r.rating %>
+                    <%= r.created_at.strftime("| posted on %d/%m/%Y") %></p>
+                <hr />
+            </ol>
+        <% end %>
+    
+<% else %>
+    <p>User have not posted any reviews yet</p>
+<% end %>
