@@ -11,10 +11,10 @@
     %tr
       %td= category.name
       %td= link_to 'Show', category
-      -if !current_user.nil? && true == current_user.admin?
+      -if administrator
         %td= link_to 'Edit', edit_category_path(category)
         %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
       
 %br
-
-= link_to 'New Category', new_category_path
+-if administrator
+  = link_to 'New Category', new_category_path, class: 'btn btn-primary'

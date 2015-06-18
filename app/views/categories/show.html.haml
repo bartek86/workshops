@@ -1,17 +1,22 @@
-%p#notice= notice
+.row
+  .col-md-6
+    %p#notice= notice
+    
+    %p
+      %b Name:
+      = category.name
+    
+    %p
+      - category.products.each do |product|
+        %ul
+        = link_to product.title, category_product_path(product.category.id, product.id)
 
-%p
-  %b Name:
-  = category.name
-
-%p
-  - category.products.each do |product|
-    = product.title
-
-%p
-  %h3 New product
-  = render 'products/form'
-- if !current_user.nil? && true == current_user.admin?  
-  = link_to 'Edit', edit_category_path(category)
-\|
+  .col-md-4
+    %p
+      %h3 New product
+      = render 'products/form'
+%hr    
+- if administrator  
+  = link_to 'Edit', edit_category_path(category), class: 'btn btn-primary'
+  
 = link_to 'Back', categories_path, class: 'btn btn-primary'
