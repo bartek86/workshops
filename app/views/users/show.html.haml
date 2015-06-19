@@ -1,0 +1,43 @@
+%div.row
+  %aside.col-md-4
+     
+    %h3
+      = user.person
+    %p
+      = user.email
+    %br
+    %div
+      User products:
+      - @reviews.each do |r|
+        %ol.reviews.reviews
+          %p
+            Product: 
+            = link_to r.product.title, category_product_path(r.product.category.id, r.product.id)    
+    
+      
+  %div.col-md-6 
+    -if user.reviews.any?
+      %h3
+        Recent reviews
+        
+      - @reviews.each do |r|
+        %ol.reviews.reviews
+          %p
+            Product: 
+            = link_to r.product.title, category_product_path(r.product.category.id, r.product.id)
+          %p
+            = r.content
+          %p
+            rated:
+            = r.rating
+            = r.created_at.strftime("| posted on %d/%m/%Y")
+                        
+                    
+          %hr
+                
+            
+        
+    - else 
+      %p
+        User have not posted any reviews yet
+    
