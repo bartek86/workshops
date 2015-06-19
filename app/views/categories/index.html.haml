@@ -11,7 +11,11 @@
     %tr
       %td= category.name
       %td= link_to 'Show', category
+<<<<<<< HEAD
       -if administrator
+=======
+      -if !current_user.nil? && true == current_user.admin?
+>>>>>>> b5549c7f940e015bac58852bc658a3f1ed7c9754
         %td= link_to 'Edit', edit_category_path(category)
         %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
       

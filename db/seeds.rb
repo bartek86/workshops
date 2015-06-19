@@ -6,7 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+<<<<<<< HEAD
 # user seed
+=======
+>>>>>>> b5549c7f940e015bac58852bc658a3f1ed7c9754
 5.times do
     User.create(
         email: Faker::Internet.email,
@@ -16,13 +19,17 @@
     )
 end
 
+<<<<<<< HEAD
 #admin seed
+=======
+>>>>>>> b5549c7f940e015bac58852bc658a3f1ed7c9754
 User.create(
     email: 'admin@example.com',
     password: 'admin123',
     firstname: 'The',
     lastname: 'Admin',
     admin: true)
+<<<<<<< HEAD
 
 # category seed    
 3.times do
@@ -51,3 +58,6 @@ end
         user_id: rand(1..5)
         )
 end        
+=======
+    
+>>>>>>> b5549c7f940e015bac58852bc658a3f1ed7c9754

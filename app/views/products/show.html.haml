@@ -35,6 +35,13 @@
     %h3 Add review
     = render 'reviews/form'
 
+<<<<<<< HEAD
 %hr
+=======
+= render reviews
+-if current_user.id == product.user_id || current_user.admin
+  = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-primary'
+\|
+>>>>>>> b5549c7f940e015bac58852bc658a3f1ed7c9754
 
 = link_to 'Back', category_products_path, class: 'btn btn-primary'
