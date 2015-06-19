@@ -20,10 +20,10 @@
       = product.average_rating
   .col-md-1
   .col-md-1
-    -if current_user.id == product.user_id || current_user.admin
+    -if auth_user
       = link_to 'Edit product', edit_category_product_path(category.id, product.id), class: 'btn btn-primary'
 %br
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+= link_to 'Back', category_path(category.id), class: 'btn btn-primary'
 %hr
 
 .row
@@ -32,11 +32,12 @@
     = render reviews
   .col-md-1
   .col-md-4
-    %h3 Add review
-    = render 'reviews/form'
+    - if auth_user
+      %h3 Add review
+      = render 'reviews/form'
 
 
-%hr
+%hr/
 
 
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+= link_to 'Back', category_path(category.id), class: 'btn btn-primary'

@@ -12,6 +12,6 @@ class Product < ActiveRecord::Base
             
           
   def average_rating
-    return self.reviews.average(:rating) if self.reviews.count > 0
+    return self.reviews.average(:rating).round(1) if self.reviews.count > 0
   end
 end

@@ -10,5 +10,5 @@
       = f.input :lastname, required: true
     .form-actions
       = f.button :submit, "Sign up", class: 'btn btn-success'
-  %br
-  = render "devise/shared/links"
+  %hr
+  = link_to "Back", new_session_path(resource_name) , class: 'btn btn-primary'

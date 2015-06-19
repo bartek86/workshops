@@ -1,18 +1,15 @@
 %div.row
   %aside.col-md-4
-     
     %h3
       = user.person
     %p
       = user.email
-    %br
     %div
-      User products:
-      - @reviews.each do |r|
-        %ol.reviews.reviews
+      User products
+      - @products.each do |p|
+        %ol.products
           %p
-            Product: 
-            = link_to r.product.title, category_product_path(r.product.category.id, r.product.id)    
+            = link_to p.title, category_product_path(p.category.id, p.id)    
     
       
   %div.col-md-6 
@@ -21,7 +18,7 @@
         Recent reviews
         
       - @reviews.each do |r|
-        %ol.reviews.reviews
+        %ol.reviews
           %p
             Product: 
             = link_to r.product.title, category_product_path(r.product.category.id, r.product.id)
@@ -34,7 +31,6 @@
                         
                     
           %hr
-                
     - else 
       %p
         User have not posted any reviews yet
