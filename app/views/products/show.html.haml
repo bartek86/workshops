@@ -2,22 +2,27 @@
 %p#error= flash[:error]
 .row
   .col-md-6
-    %p
-      %b Title:
-      = product.title
-    %p
-      %b Description:
-      = product.description
-    %p
-      %b Price:
-      = product.price
-    
-    %p
-      %b Category
-      = product.category.name
-    %p
-      %b Average rating
-      = product.average_rating
+    %h3
+      Title:
+      %b
+        = product.title
+    %br/
+    %br/
+    %div.well
+      %p
+        %b Description:
+        = product.description
+      %p
+        %b Price:
+        = product.price
+      
+      %p
+        %b Category
+        = product.category.name
+      %p
+        %b Average rating
+        %p.glyphicon.glyphicon-star  
+          = product.average_rating
   .col-md-1
   .col-md-1
     -if auth_user

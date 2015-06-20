@@ -2,11 +2,12 @@
   .col-md-6
     %p#notice= notice
     
-    %p
-      %b Category name:
-      = category.name
+    %h3
+      Category name:
+      %b
+        = category.name
       
-    
+    %br/
     %p
       %b Products:
       - category.products.each do |product|

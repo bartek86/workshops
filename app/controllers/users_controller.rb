@@ -8,9 +8,6 @@ class UsersController < ApplicationController
      
     def show
       @reviews = user.reviews.last(5)
-
-      @products = user.products
-
     end
     
 end

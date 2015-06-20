@@ -2,15 +2,17 @@
   .container-fluid
     .navbar-header
       %span.navbar-brand #{AppConfig.workshops_name}
-    %p.navbar-text.navbar-right
-
-      =link_to 'Home', root_path
-      -if user_signed_in?
-        |
-        =link_to 'User profile', current_user
-        |
-        =link_to 'Log out', destroy_user_session_path, method: :delete
-      
-      -else
-        |
-        =link_to 'Log in', new_user_session_path
+    %div.navbar-right
+      %span.glyphicon.glyphicon-user
+      =username
+      .btn-group
+        =link_to 'Home', root_path, class: 'btn btn-info'
+        -if user_signed_in?
+          
+          =link_to 'User profile', current_user, class: 'btn btn-primary'
+            
+          =link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-info'
+          
+        -else
+            
+          =link_to 'Log in', new_user_session_path, class: 'btn btn-info'

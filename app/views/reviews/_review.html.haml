@@ -1,5 +1,8 @@
+%hr/
 %p= review.content
 %p
-  %b= review.rating
-  %em= review.author
-  %em= review.created_at.strftime("Posted on %d/%m/%Y")
+  %span.badge
+    = review.rating
+  =link_to review.author, user_path(review.user.id)
+  %em= review.created_at.strftime("posted on %d/%m/%Y")
+  
