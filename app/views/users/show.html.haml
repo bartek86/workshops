@@ -1,61 +1,11 @@
 %div.row
-  %aside.col-md-4 
-    %div.well
-      %h3
-        = user.person
-      %p
-        = user.email
-      
-    %br/
-    %div.panel.panel-default
-      %div.panel.panel-heading
-        %strong User products
-      
-      
-      -if user.products.any?
-        
-        %table.table
-          %thead
-            %tr
-              %th Product
-              %th Average rating
-          %tbody
-            - user.products.each do |p|
-              %tr
-                %td= link_to p.title, category_product_path(p.category.id, p.id)
-              
-                %td
-                  -if p.average_rating
-                    %p.glyphicon.glyphicon-star  
-                    = p.average_rating
-      -else
-        User have not created any products yet.
+  
+  %aside.col-md-5 
+    = render 'users/userdata'
+    = render 'users/userproducts'
         
   .col-md-1     
-  %div.col-md-7.panel.panel-default 
-    %h3
-      Recent reviews
-
-    -if user.reviews.any?
-      
-        
-      - @reviews.each do |r|
-        %div.panel.panel-default
-          %div.panel-body
-            %p
-              Product: 
-              = link_to r.product.title, category_product_path(r.product.category.id, r.product.id)
-            %p
-              = r.content
-          %div.panel-footer
-            rated
-            %span.badge
-              = r.rating
-            = r.created_at.strftime(", posted on %d/%m/%Y")
-                        
-                    
-          
-    - else 
-      %p
-        User have not posted any reviews yet
+  %div.col-md-6.panel.panel-default
+    = render 'users/recentreviews'
+    
     

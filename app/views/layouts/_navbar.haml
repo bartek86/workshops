@@ -3,8 +3,9 @@
     .navbar-header
       %span.navbar-brand #{AppConfig.workshops_name}
     %div.navbar-right
-      %span.glyphicon.glyphicon-user
-      =username
+      -if user_signed_in?
+        %span.glyphicon.glyphicon-user
+        =username
       .btn-group
         =link_to 'Home', root_path, class: 'btn btn-info'
         -if user_signed_in?

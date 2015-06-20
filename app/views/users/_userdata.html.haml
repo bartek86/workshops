@@ -1,0 +1,15 @@
+%div.well
+  %h3
+    = user.person
+  %p
+    = user.email
+  %br/
+  %p
+    Products added:
+    %span.badge
+      =user.products.count
+  %p 
+    Reviews posted:
+    %span.badge
+      =user.reviews.count
+  %br/
