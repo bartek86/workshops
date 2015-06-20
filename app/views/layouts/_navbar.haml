@@ -2,18 +2,21 @@
   .container-fluid
     .navbar-header
       %span.navbar-brand #{AppConfig.workshops_name}
-    %div.navbar-right
-      -if user_signed_in?
-        %span.glyphicon.glyphicon-user
-        =username
+    .navbar-right
+
       .btn-group
-        =link_to 'Home', root_path, class: 'btn btn-info'
+        -if user_signed_in?
+          %button.btn.btn-info.disabled
+          
+            %span.glyphicon.glyphicon-user
+            =username
+        =link_to 'Home', root_path, class: 'btn btn-primary'
         -if user_signed_in?
           
           =link_to 'User profile', current_user, class: 'btn btn-primary'
             
-          =link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-info'
+          =link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
           
         -else
             
-          =link_to 'Log in', new_user_session_path, class: 'btn btn-info'
+          =link_to 'Log in', new_user_session_path, class: 'btn btn-primary'

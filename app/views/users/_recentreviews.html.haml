@@ -14,10 +14,10 @@
           %p
             = r.content
         %div.panel-footer
-          rated
-          %span.badge
+          %span.badge.badge-rating
+            %span.glyphicon.glyphicon-star
             = r.rating
-          = r.created_at.strftime(", posted on %d/%m/%Y")
+          = r.created_at.strftime(" posted on %d/%m/%Y")
                         
                     
           

@@ -1,8 +1,10 @@
-%hr/
-%p= review.content
-%p
-  %span.badge
-    = review.rating
-  =link_to review.author, user_path(review.user.id)
-  %em= review.created_at.strftime("posted on %d/%m/%Y")
+%div.panel.panel-default
+  %div.panel-body
+    = review.content
+  %div.panel-footer
+    %span.badge.badge-rating
+      %span.glyphicon.glyphicon-star
+      = review.rating
+    =link_to review.author, user_path(review.user.id)
+    %em= review.created_at.strftime("posted on %d/%m/%Y")
   

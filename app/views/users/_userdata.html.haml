@@ -6,11 +6,11 @@
   %br/
   %p
     Products added:
-    %span.badge
+    %span.badge.badge-count
       =user.products.count
   %p 
     Reviews posted:
-    %span.badge
+    %span.badge.badge-count
       =user.reviews.count
   
   -if current_user.id == user.id

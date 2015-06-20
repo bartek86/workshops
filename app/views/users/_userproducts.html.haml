@@ -1,8 +1,7 @@
 %div.panel.panel-default
   %div.panel.panel-heading
     %h3 User products
-      
-      
+
   -if user.products.any?
         
     %table.table
@@ -13,17 +12,18 @@
           %th Average rating
           %th Reviews
       %tbody
-        - user.products.each do |p|
+        - user.products.each do |product|
           %tr
             %td
-              = link_to p.title, category_product_path(p.category.id, p.id)
+              = link_to product.title, category_product_path(product.category.id, product.id)
             %td
-              = link_to p.category.name, category_path(p.category.id)
+              = link_to product.category.name, category_path(product.category.id)
             %td
-              -if p.average_rating
-                %p.glyphicon.glyphicon-star  
-                = p.average_rating
+              -if product.average_rating
+                %span.badge.badge-rating
+                  %span.glyphicon.glyphicon-star
+                  =product.average_rating
             %td
-              = p.reviews.count
+              = product.reviews.count
   -else
     User have not created any products yet.
