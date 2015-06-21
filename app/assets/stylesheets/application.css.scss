@@ -7,3 +7,10 @@
 .badge-count {
   background-color: green;
 }
+
+tr,td,th {
+  text-align: center;
+  .first{
+    text-align: left;
+  }
+}
