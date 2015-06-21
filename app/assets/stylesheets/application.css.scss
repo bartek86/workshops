@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+$bars-back: #EEE6D9;
+$bars_text: #35324F;
+$obj_body: #FFF7EA;
+
+body {
+  background-color: #FFFFFF;
+}
+
 .badge-rating {
   background-color: #d58512;
 }
@@ -12,5 +20,39 @@ tr,td,th {
   text-align: center;
   .first{
     text-align: left;
+  }
+}
+
+.navbar-default{
+  background-color: $bars-back;
+  .navbar-brand{
+    color: $bars_text;
+    font-weight: bold;
+  }
+}
+
+.panel{
+  .panel-heading, .panel-footer{
+  background-color: $bars-back;
+  color: $bars_text;
+  }
+  .panel-body.color-body{
+    background-color: $obj_body;
+  }
+}
+
+.well{
+  background-color: $obj_body;
+  color: $bars_text;
+
+}
+
+.well.well-sm{
+  background-color: $bars-back;
+}
+
+.navbar-right{
+  .btn-default{
+  background-color: $obj_body;
   }
 }
