@@ -1,13 +1,18 @@
 @import "bootstrap";
 
-$bars-back: #EEE6D9;
-$bars_text: #35324F;
-$obj_body: #FFF7EA;
+$bars-back: #D0D0D0 ;
+$bars_text: 003300;
+$obj_body: #F0F0F0 ;
 
 body {
-  background-color: #FFFFFF;
-}
+  background-color: #F8F8F8 ;
 
+  margin-bottom: 60px;
+}
+.col-lg-12{
+  margin-left: 50px;
+  margin-right: 40px;
+}
 .badge-rating {
   background-color: #d58512;
 }
