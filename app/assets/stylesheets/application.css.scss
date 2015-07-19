@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-$bars-back: #8e9eab ;
+$bars-back: #A4B0BA ;
 $bars_text: #003300;
 $obj_body: #eef2f3 ;
 $head_text: #FFF ;
@@ -46,26 +46,37 @@ tr,td,th {
 }
 
 .panel{
-  .panel-heading, .panel-footer{
+  .panel-heading{
   background-color: $bars-back;
   color: $head_text;
   }
+  
+  .panel-footer{
+  background-color: $bars-back;
+  color: $head_text;
   a{
     color: #D7F7F7;
-  }  
+    } 
+  }
+
   .panel-body.color-body{
     background-color: $obj_body;
+
   }
 }
 
 .well{
   background-color: $obj_body;
   color: $bars_text;
-
+ 
 }
 
 .well.well-sm{
   background-color: $bars-back;
+  color: #FFF;
+  a{
+    color: #D7F7F7;
+  } 
 }
 
 .navbar-right{
