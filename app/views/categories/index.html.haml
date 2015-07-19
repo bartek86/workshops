@@ -19,14 +19,14 @@
             %td
               %span.badge.badge-count
                 = category.products.count
-            %td= link_to 'Show', category, class: 'btn btn-info btn-xs'
+            %td= link_to 'Show', category, class: 'btn btn-primary btn-xs'
         
             -if administrator
         
               %td= link_to 'Edit', edit_category_path(category),class: 'btn btn-success btn-xs'
               %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' },
-                class: 'btn btn-success btn-xs'
+                class: 'btn btn-danger btn-xs'
               
         
   -if administrator
-    = link_to 'New Category', new_category_path, class: 'btn btn-info'
+    = link_to 'New Category', new_category_path, class: 'btn btn-primary'
